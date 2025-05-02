@@ -21,7 +21,15 @@
 			}
 		</script>
 
-		<script type="module">
+		<script type="importmap">
+            {
+              "imports": {
+                "three": "../../node_modules/three/build/three.module.js",
+                "three/addons/": "../../node_modules/three/examples/jsm/"
+              }
+            }
+          </script>
+        <script type="module">
 
 			import * as THREE from 'three';
 			import { MeshPhysicalNodeMaterial, normalWorld, timerLocal, mx_noise_vec3, mx_worley_noise_vec3, mx_cell_noise_float, mx_fractal_noise_vec3 } from 'three/nodes';

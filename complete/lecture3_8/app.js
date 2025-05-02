@@ -1,8 +1,8 @@
-import * as THREE from 'three/three.module.js';
+import * as THREE from 'three';
 import { VRButton } from '../../libs/VRButton.js';
 import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
 import { Stats } from '../../libs/stats.module.js';
-import { OrbitControls } from 'three/addons/OrbitControls.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { CannonHelper } from '../../libs/CannonHelper.js';
 
 class App{
@@ -61,7 +61,7 @@ class App{
     initScene(){
         
         //Create a marker to indicate where the joint is
-        const geometry = new THREE.SphereBufferGeometry( 0.1, 8, 8 );
+        const geometry = new THREE.SphereGeometry( 0.1, 8, 8 );
         const material = new THREE.MeshStandardMaterial({ color: 0xaa0000 });
         this.marker = new THREE.Mesh( geometry, material );
         this.marker.visible = false;

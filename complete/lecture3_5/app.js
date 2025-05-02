@@ -1,9 +1,9 @@
-import * as THREE from 'three/three.module.js';
+import * as THREE from 'three';
 import { VRButton } from '../../libs/VRButton.js';
 import { BoxLineGeometry } from 'three/addons/BoxLineGeometry.js';
 import { GLTFLoader } from 'three/addons/GLTFLoader.js';
 import { Stats } from '../../libs/stats.module.js';
-import { OrbitControls } from 'three/addons/OrbitControls.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { SpotLightVolumetricMaterial } from '../../libs/SpotLightVolumetricMaterial.js';
 
 

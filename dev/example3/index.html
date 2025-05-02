@@ -14,9 +14,17 @@
     </style>
 </head>
 <body>
-    <script type="module">
+    <script type="importmap">
+            {
+              "imports": {
+                "three": "../../node_modules/three/build/three.module.js",
+                "three/addons/": "../../node_modules/three/examples/jsm/"
+              }
+            }
+          </script>
+        <script type="module">
         // Import three
-        import * as THREE from 'three/three.module.js';
+        import * as THREE from 'three';
         // Import the default VRButton
         import { VRButton } from 'three/addons/VRButton.js';
 

@@ -1,10 +1,10 @@
-import * as THREE from 'three/three.module.js';
+import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/DRACOLoader.js';
 import { RGBELoader } from 'three/addons/RGBELoader.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
 import { Stats } from '../../libs/stats.module.js';
-import { OrbitControls } from 'three/addons/OrbitControls.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 
 class App{

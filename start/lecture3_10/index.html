@@ -24,6 +24,14 @@
 	<body>
         <script src="../../libs/fas.js"></script>
         <script src="../../libs/hammer.min.js"></script>
+        <script type="importmap">
+            {
+              "imports": {
+                "three": "../../node_modules/three/build/three.module.js",
+                "three/addons/": "../../node_modules/three/examples/jsm/"
+              }
+            }
+          </script>
         <script type="module">
             import { App } from './app.js';
 

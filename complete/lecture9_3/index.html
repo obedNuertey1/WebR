@@ -20,7 +20,15 @@
 </head>
 <body>
     <script src="../../libs/fas.js"></script>
-    <script type="module">
+    <script type="importmap">
+            {
+              "imports": {
+                "three": "../../node_modules/three/build/three.module.js",
+                "three/addons/": "../../node_modules/three/examples/jsm/"
+              }
+            }
+          </script>
+        <script type="module">
         import { App } from './app.js';
         
 		document.addEventListener("DOMContentLoaded", function(){

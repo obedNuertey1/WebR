@@ -1,4 +1,4 @@
-import * as THREE from 'three/three.module.js';
+import * as THREE from 'three';
 import { VRButton } from '../../libs/VRButton.js';
 import { CanvasUI } from '../../libs/CanvasUI.js';
 import { BoxLineGeometry } from 'three/addons/BoxLineGeometry.js';
@@ -52,7 +52,7 @@ class App{
 					new THREE.LineBasicMaterial( { color: 0x808080 } )
 				);
         
-        const geo1 = new THREE.SphereBufferGeometry(0.1, 16, 8);
+        const geo1 = new THREE.SphereGeometry(0.1, 16, 8);
         const mat1 = new THREE.MeshStandardMaterial( { color: 0x3333ff } );
         const mat2 = new THREE.MeshStandardMaterial( { color: 0x33ff33 } );
         this.materials = [ mat1, mat2 ];

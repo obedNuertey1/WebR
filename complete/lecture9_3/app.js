@@ -1,5 +1,5 @@
 
-import * as THREE from 'three/three.module.js';
+import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/GLTFLoader.js';
 import { RGBELoader } from 'three/addons/RGBELoader.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';

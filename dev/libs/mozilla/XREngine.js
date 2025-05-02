@@ -107,7 +107,7 @@ export default class XREngine {
 
 	addSphere(position=[0,0,0], size=[0.1, 0.1, 0.1], color=0x00FF00){
 		const sphere = new THREE.Mesh(
-			new THREE.SphereBufferGeometry(...size),
+			new THREE.SphereGeometry(...size),
 			new THREE.MeshLambertMaterial({ color: color })
 		)
 		sphere.position.set(...position)

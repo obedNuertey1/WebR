@@ -10,7 +10,7 @@ import {
 	Object3D,
 	Quaternion,
 	SphereGeometry,
-} from "./three/three.module.js";
+} from "./three";
 
 import { GLTFLoader } from './three/jsm/GLTFLoader.js';
 

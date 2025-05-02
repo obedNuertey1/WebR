@@ -8,9 +8,9 @@ import {
   Mesh,
   MeshBasicMaterial,
   Object3D,
-  SphereBufferGeometry,
+  SphereGeometry,
   Vector3,
-} from '../three/three.module.js';
+} from '../three';
 
 const colors = {
   PLAYER: new Color( 0xee836f ).convertGammaToLinear( 2.2 ).getHex(),
@@ -31,7 +31,7 @@ class PathfindingHelper extends Object3D {
     super();
 
     this._playerMarker = new Mesh(
-      new SphereBufferGeometry( 0.25, 32, 32 ),
+      new SphereGeometry( 0.25, 32, 32 ),
       new MeshBasicMaterial( { color: colors.PLAYER } )
     );
 
@@ -56,7 +56,7 @@ class PathfindingHelper extends Object3D {
 
     this._pathLineMaterial = new LineBasicMaterial( { color: colors.PATH, linewidth: 2 } ) ;
     this._pathPointMaterial = new MeshBasicMaterial( { color: colors.WAYPOINT } );
-    this._pathPointGeometry = new SphereBufferGeometry( 0.08 );
+    this._pathPointGeometry = new SphereGeometry( 0.08 );
 
     this._markers = [
       this._playerMarker,

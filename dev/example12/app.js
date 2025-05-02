@@ -1,4 +1,4 @@
-import * as THREE from 'three/three.module.js';
+import * as THREE from 'three';
 import { ARButton } from 'three/addons/ARButton.js';
 import { XRWorldMeshes } from '../../libs/XRWorldMeshes.js';
 

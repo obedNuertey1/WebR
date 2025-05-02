@@ -521,7 +521,7 @@ class Player{
 				const debugPath = [player.position].concat(this.calculatedPath);
 
 				debugPath.forEach(function( vertex ){
-					geometry = new THREE.SphereBufferGeometry( 0.2 );
+					geometry = new THREE.SphereGeometry( 0.2 );
 					const material = new THREE.MeshBasicMaterial( {color: self.pathColor} );
 					const node = new THREE.Mesh( geometry, material );
 					node.position.copy(vertex);

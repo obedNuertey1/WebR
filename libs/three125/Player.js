@@ -88,7 +88,7 @@ class Player{
 
 		// Draw debug spheres except the last one. Also, add the player position.
 		const debugPath = [player.position].concat(this.calculatedPath);
-		const geo = new THREE.SphereBufferGeometry( this.nodeRadius );
+		const geo = new THREE.SphereGeometry( this.nodeRadius );
 		const mat = new THREE.MeshBasicMaterial( {color: this.pathColor} );
 		const offset = this.app.debug.offset | 0;
 		

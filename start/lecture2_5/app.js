@@ -1,5 +1,5 @@
-import * as THREE from 'three/three.module.js';
-import { OrbitControls } from 'three/addons/OrbitControls.js';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 class App{
 	constructor(){
@@ -24,7 +24,7 @@ class App{
 		this.renderer.setSize( window.innerWidth, window.innerHeight );
 		container.appendChild( this.renderer.domElement );
 		
-        const geometry = new THREE.TorusKnotBufferGeometry( 0.8, 0.3, 120, 16 ); 
+        const geometry = new THREE.TorusKnotGeometry( 0.8, 0.3, 120, 16 ); 
         
         const material = new THREE.MeshBasicMaterial( { color: 0xFF0000 });
 

@@ -1,6 +1,6 @@
 import {
 	Object3D,
-	SphereBufferGeometry,
+	SphereGeometry,
 	MeshStandardMaterial,
 	Mesh
 } from "../three.module.js";
@@ -14,7 +14,7 @@ function XRHandModel( controller ) {
 
 	if ( window.XRHand ) {
 
-		var geometry = new SphereBufferGeometry( 1, 10, 10 );
+		var geometry = new SphereGeometry( 1, 10, 10 );
 		var jointMaterial = new MeshStandardMaterial( { color: 0x000000, roughness: 0.2, metalness: 0.8 } );
 		var tipMaterial = new MeshStandardMaterial( { color: 0x333333, roughness: 0.2, metalness: 0.8 } );
 

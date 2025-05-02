@@ -2,7 +2,7 @@ import * as THREE from 'three/addons/three.module.js';
 import { VRButton } from '../../libs/VRButton.js';
 import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
 import { XRHandModelFactory } from 'three/addons/XRHandModelFactory.js';
-import { OrbitControls } from 'three/addons/OrbitControls.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 class App{
 	constructor(){

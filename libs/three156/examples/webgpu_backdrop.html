@@ -22,7 +22,15 @@
 			}
 		</script>
 
-		<script type="module">
+		<script type="importmap">
+            {
+              "imports": {
+                "three": "../../node_modules/three/build/three.module.js",
+                "three/addons/": "../../node_modules/three/examples/jsm/"
+              }
+            }
+          </script>
+        <script type="module">
 
 			import * as THREE from 'three';
 			import { float, vec3, color, toneMapping, viewportSharedTexture, viewportTopLeft, checker, uv, timerLocal, oscSine, output, MeshStandardNodeMaterial } from 'three/nodes';

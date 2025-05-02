@@ -14,10 +14,18 @@
 
 		<script src="../../libs/HelioWebXRPolyfill.js"></script>
 
-		<script type="module">
+		<script type="importmap">
+            {
+              "imports": {
+                "three": "../../node_modules/three/build/three.module.js",
+                "three/addons/": "../../node_modules/three/examples/jsm/"
+              }
+            }
+          </script>
+        <script type="module">
 
-			import * as THREE from 'three/three.module.js';
-			import { OrbitControls } from 'three/addons/OrbitControls.js';
+			import * as THREE from 'three';
+			import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 			import { VRButton } from 'three/addons/VRButton.js';
 			import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
 

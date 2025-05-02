@@ -1,4 +1,4 @@
-import * as THREE from 'three/three.module.js';
+import * as THREE from 'three';
 import { BoxLineGeometry } from 'three/addons/BoxLineGeometry.js';
 import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
 import { CanvasUI } from '../../libs/CanvasUI.js'

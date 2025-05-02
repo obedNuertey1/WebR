@@ -28181,7 +28181,7 @@
 
 		if ( heightScale !== undefined ) console.warn( 'THREE.TorusKnotGeometry: heightScale has been deprecated. Use .scale( x, y, z ) instead.' );
 
-		this.fromBufferGeometry( new TorusKnotBufferGeometry( radius, tube, tubularSegments, radialSegments, p, q ) );
+		this.fromBufferGeometry( new TorusKnotGeometry( radius, tube, tubularSegments, radialSegments, p, q ) );
 		this.mergeVertices();
 
 	}
@@ -28189,13 +28189,13 @@
 	TorusKnotGeometry.prototype = Object.create( Geometry.prototype );
 	TorusKnotGeometry.prototype.constructor = TorusKnotGeometry;
 
-	// TorusKnotBufferGeometry
+	// TorusKnotGeometry
 
-	function TorusKnotBufferGeometry( radius, tube, tubularSegments, radialSegments, p, q ) {
+	function TorusKnotGeometry( radius, tube, tubularSegments, radialSegments, p, q ) {
 
 		BufferGeometry.call( this );
 
-		this.type = 'TorusKnotBufferGeometry';
+		this.type = 'TorusKnotGeometry';
 
 		this.parameters = {
 			radius: radius,
@@ -28339,8 +28339,8 @@
 
 	}
 
-	TorusKnotBufferGeometry.prototype = Object.create( BufferGeometry.prototype );
-	TorusKnotBufferGeometry.prototype.constructor = TorusKnotBufferGeometry;
+	TorusKnotGeometry.prototype = Object.create( BufferGeometry.prototype );
+	TorusKnotGeometry.prototype.constructor = TorusKnotGeometry;
 
 	/**
 	 * @author oosmoxiecode
@@ -30306,7 +30306,7 @@
 			thetaLength: thetaLength
 		};
 
-		this.fromBufferGeometry( new SphereBufferGeometry( radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength ) );
+		this.fromBufferGeometry( new SphereGeometry( radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength ) );
 		this.mergeVertices();
 
 	}
@@ -30314,13 +30314,13 @@
 	SphereGeometry.prototype = Object.create( Geometry.prototype );
 	SphereGeometry.prototype.constructor = SphereGeometry;
 
-	// SphereBufferGeometry
+	// SphereGeometry
 
-	function SphereBufferGeometry( radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength ) {
+	function SphereGeometry( radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength ) {
 
 		BufferGeometry.call( this );
 
-		this.type = 'SphereBufferGeometry';
+		this.type = 'SphereGeometry';
 
 		this.parameters = {
 			radius: radius,
@@ -30428,8 +30428,8 @@
 
 	}
 
-	SphereBufferGeometry.prototype = Object.create( BufferGeometry.prototype );
-	SphereBufferGeometry.prototype.constructor = SphereBufferGeometry;
+	SphereGeometry.prototype = Object.create( BufferGeometry.prototype );
+	SphereGeometry.prototype.constructor = SphereGeometry;
 
 	/**
 	 * @author Kaleb Murphy
@@ -31561,13 +31561,13 @@
 		TubeGeometry: TubeGeometry,
 		TubeBufferGeometry: TubeBufferGeometry,
 		TorusKnotGeometry: TorusKnotGeometry,
-		TorusKnotBufferGeometry: TorusKnotBufferGeometry,
+		TorusKnotGeometry: TorusKnotGeometry,
 		TorusGeometry: TorusGeometry,
 		TorusBufferGeometry: TorusBufferGeometry,
 		TextGeometry: TextGeometry,
 		TextBufferGeometry: TextBufferGeometry,
 		SphereGeometry: SphereGeometry,
-		SphereBufferGeometry: SphereBufferGeometry,
+		SphereGeometry: SphereGeometry,
 		RingGeometry: RingGeometry,
 		RingBufferGeometry: RingBufferGeometry,
 		PlaneGeometry: PlaneGeometry,
@@ -38406,7 +38406,7 @@
 							break;
 
 						case 'SphereGeometry':
-						case 'SphereBufferGeometry':
+						case 'SphereGeometry':
 
 							geometry = new Geometries[ data.type ](
 								data.radius,
@@ -38464,7 +38464,7 @@
 							break;
 
 						case 'TorusKnotGeometry':
-						case 'TorusKnotBufferGeometry':
+						case 'TorusKnotGeometry':
 
 							geometry = new Geometries[ data.type ](
 								data.radius,
@@ -45341,7 +45341,7 @@
 
 		this.color = color;
 
-		var geometry = new SphereBufferGeometry( sphereSize, 4, 2 );
+		var geometry = new SphereGeometry( sphereSize, 4, 2 );
 		var material = new MeshBasicMaterial( { wireframe: true, fog: false } );
 
 		Mesh.call( this, geometry, material );
@@ -45694,7 +45694,7 @@
 
 		} );
 
-		var geometry = new SphereBufferGeometry( 1, 32, 16 );
+		var geometry = new SphereGeometry( 1, 32, 16 );
 
 		Mesh.call( this, geometry, material );
 
@@ -48802,13 +48802,13 @@
 	exports.TubeGeometry = TubeGeometry;
 	exports.TubeBufferGeometry = TubeBufferGeometry;
 	exports.TorusKnotGeometry = TorusKnotGeometry;
-	exports.TorusKnotBufferGeometry = TorusKnotBufferGeometry;
+	exports.TorusKnotGeometry = TorusKnotGeometry;
 	exports.TorusGeometry = TorusGeometry;
 	exports.TorusBufferGeometry = TorusBufferGeometry;
 	exports.TextGeometry = TextGeometry;
 	exports.TextBufferGeometry = TextBufferGeometry;
 	exports.SphereGeometry = SphereGeometry;
-	exports.SphereBufferGeometry = SphereBufferGeometry;
+	exports.SphereGeometry = SphereGeometry;
 	exports.RingGeometry = RingGeometry;
 	exports.RingBufferGeometry = RingBufferGeometry;
 	exports.PlaneGeometry = PlaneGeometry;

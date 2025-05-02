@@ -1,4 +1,4 @@
-import { Raycaster, Vector3, Quaternion, Matrix4, Clock, EventDispatcher } from 'three/three.module.js';
+import { Raycaster, Vector3, Quaternion, Matrix4, Clock, EventDispatcher } from 'three';
 
 class Bullet extends EventDispatcher{
     constructor( mesh, options ){

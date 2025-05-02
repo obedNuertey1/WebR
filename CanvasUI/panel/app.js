@@ -1,4 +1,4 @@
-import * as THREE from 'three/three.module.js';
+import * as THREE from 'three';
 import { BoxLineGeometry } from 'three/addons/BoxLineGeometry.js';
 import { CanvasUI } from '../../libs/CanvasUI.js'
 import { VRButton } from '../../libs/VRButton.js';

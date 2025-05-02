@@ -20,10 +20,18 @@
 			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> vr - hand and controller support
 		</div>
         <script src="../../libs/fas.js"></script>
-		<script type="module">
+		<script type="importmap">
+            {
+              "imports": {
+                "three": "../../node_modules/three/build/three.module.js",
+                "three/addons/": "../../node_modules/three/examples/jsm/"
+              }
+            }
+          </script>
+        <script type="module">
 
-			import * as THREE from 'three/three.module.js';
-			import { OrbitControls } from 'three/addons/OrbitControls.js';
+			import * as THREE from 'three';
+			import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 			import { VRButton } from '../../libs/VRButton.js';
 			import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
 			import { XRHandModelFactory } from 'three/addons/WebXRHandController.js';

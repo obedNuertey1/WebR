@@ -1,4 +1,4 @@
-import * as THREE from 'three/three.module.js';
+import * as THREE from 'three';
 import { CSS3DRenderer, CSS3DObject } from 'three/addons/CSS3DRenderer.js';
 
 var THREEx = THREEx || {}
