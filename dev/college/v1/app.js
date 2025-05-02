@@ -1,7 +1,7 @@
 
-import * as THREE from '../../../libs/three/three.module.js';
-import { GLTFLoader } from '../../../libs/three/jsm/GLTFLoader.js';
-import { OrbitControls } from '../../../libs/three/jsm/OrbitControls.js';
+import * as THREE from '../three/three.module.js';
+import { GLTFLoader } from '../three/addons/GLTFLoader.js';
+import { OrbitControls } from '../three/addons/OrbitControls.js';
 import { LoadingBar } from '../../../libs/LoadingBar.js';
 import { Stats } from '../../../libs/stats.module.js';
 

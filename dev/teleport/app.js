@@ -1,7 +1,7 @@
-import * as THREE from '../../libs/three/three.module.js';
+import * as THREE from 'three/three.module.js';
 import { VRButton } from '../../libs/VRButton.js';
-import { XRControllerModelFactory } from '../../libs/three/jsm/XRControllerModelFactory.js';
-import { OrbitControls } from '../../libs/three/jsm/OrbitControls.js';
+import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
+import { OrbitControls } from 'three/addons/OrbitControls.js';
 
 import { TeleportMesh } from '../../libs/TeleportMesh.js';
 

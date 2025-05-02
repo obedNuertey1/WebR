@@ -1,13 +1,13 @@
-import * as THREE from '../../libs/three/three.module.js';
-import { GLTFLoader } from '../../libs/three/jsm/GLTFLoader.js';
-import { FBXLoader } from '../../libs/three/jsm/FBXLoader.js';
+import * as THREE from 'three/three.module.js';
+import { GLTFLoader } from 'three/addons/GLTFLoader.js';
+import { FBXLoader } from 'three/addons/FBXLoader.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
-import { ARButton } from '../../libs/three/jsm/ARButton.js';
-import { VRButton } from '../../libs/three/jsm/VRButton.js';
-import { XRControllerModelFactory } from '../../libs/three/jsm/XRControllerModelFactory.js';
+import { ARButton } from 'three/addons/ARButton.js';
+import { VRButton } from 'three/addons/VRButton.js';
+import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
 import { Stats } from '../../libs/stats.module.js';
 import * as GUI from '../../libs/dat.gui.module.js';
-import { OrbitControls } from '../../libs/three/jsm/OrbitControls.js';
+import { OrbitControls } from 'three/addons/OrbitControls.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
 
 

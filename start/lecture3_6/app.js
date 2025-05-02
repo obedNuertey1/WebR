@@ -1,15 +1,15 @@
-import * as THREE from '../../libs/three/three.module.js';
+import * as THREE from 'three/three.module.js';
 import { VRButton } from '../../libs/VRButton.js';
 import { CanvasUI } from '../../libs/CanvasUI.js';
-import { XRControllerModelFactory } from '../../libs/three/jsm/XRControllerModelFactory.js';
-import { BoxLineGeometry } from '../../libs/three/jsm/BoxLineGeometry.js';
+import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
+import { BoxLineGeometry } from 'three/addons/BoxLineGeometry.js';
 import { Stats } from '../../libs/stats.module.js';
-import { OrbitControls } from '../../libs/three/jsm/OrbitControls.js';
+import { OrbitControls } from 'three/addons/OrbitControls.js';
 import {
 	Constants as MotionControllerConstants,
 	fetchProfile,
 	MotionController
-} from '../../libs/three/jsm/motion-controllers.module.js';
+} from 'three/addons/motion-controllers.module.js';
 
 const DEFAULT_PROFILES_PATH = 'https://cdn.jsdelivr.net/npm/@webxr-input-profiles/assets@1.0/dist/profiles';
 const DEFAULT_PROFILE = 'generic-trigger';

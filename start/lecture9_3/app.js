@@ -1,10 +1,10 @@
 
-import * as THREE from '../../libs/three/three.module.js';
-import { GLTFLoader } from '../../libs/three/jsm/GLTFLoader.js';
-import { RGBELoader } from '../../libs/three/jsm/RGBELoader.js';
+import * as THREE from 'three/three.module.js';
+import { GLTFLoader } from 'three/addons/GLTFLoader.js';
+import { RGBELoader } from 'three/addons/RGBELoader.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
 import { VRButton } from '../../libs/VRButton.js';
-import { XRControllerModelFactory } from '../../libs/three/jsm/XRControllerModelFactory.js';
+import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
 import { Stats } from '../../libs/stats.module.js';
 import { CanvasUI } from '../../libs/CanvasUI.js';
 

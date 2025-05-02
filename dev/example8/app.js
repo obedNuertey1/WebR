@@ -1,11 +1,11 @@
-import * as THREE from '../../libs/three/three.module.js';
-import { GLTFLoader } from '../../libs/three/jsm/GLTFLoader.js';
-import { OrbitControls } from '../../libs/three/jsm/OrbitControls.js';
-import { VRButton } from '../../libs/three/jsm/VRButton.js';
-import { XRControllerModelFactory } from '../../libs/three/jsm/XRControllerModelFactory.js';
+import * as THREE from 'three/three.module.js';
+import { GLTFLoader } from 'three/addons/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/OrbitControls.js';
+import { VRButton } from 'three/addons/VRButton.js';
+import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
 import { Player } from '../../libs/Player.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
-import { Pathfinding } from '../../libs/three/jsm/three-pathfinding.module.js';
+import { Pathfinding } from 'three/addons/three-pathfinding.module.js';
 
 class App{
 	constructor(){

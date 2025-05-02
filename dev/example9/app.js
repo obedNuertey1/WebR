@@ -1,5 +1,5 @@
-import * as THREE from '../../libs/three/three.module.js';
-import { ARButton } from '../../libs/three/jsm/ARButton.js';
+import * as THREE from 'three/three.module.js';
+import { ARButton } from 'three/addons/ARButton.js';
 
 class App{
 	constructor(){

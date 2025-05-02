@@ -1,4 +1,4 @@
-import * as THREE from '../../libs/three/three.module.js';
+import * as THREE from 'three/three.module.js';
 import { RingProgressMesh } from '../../libs/RingProgressMesh.js'
 
 class App{

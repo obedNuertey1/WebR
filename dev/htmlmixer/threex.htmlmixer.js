@@ -1,5 +1,5 @@
-import * as THREE from '../../libs/three/three.module.js';
-import { CSS3DRenderer, CSS3DObject } from '../../libs/three/jsm/CSS3DRenderer.js';
+import * as THREE from 'three/three.module.js';
+import { CSS3DRenderer, CSS3DObject } from 'three/addons/CSS3DRenderer.js';
 
 var THREEx = THREEx || {}
 

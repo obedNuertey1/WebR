@@ -1,6 +1,6 @@
 
-import * as THREE from '../../../libs/three/three.module.js';
-import { GLTFLoader } from '../../../libs/three/jsm/GLTFLoader.js';
+import * as THREE from '../three/three.module.js';
+import { GLTFLoader } from '../three/addons/GLTFLoader.js';
 import { LoadingBar } from '../../../libs/LoadingBar.js';
 import { JoyStick } from '../../../libs/JoyStick.js';
 import { Stats } from '../../../libs/stats.module.js';
