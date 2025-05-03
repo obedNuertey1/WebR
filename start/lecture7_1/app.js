@@ -1,4 +1,4 @@
-import * as THREE from '../../libs/three125/three.module.js';
+import * as THREE from 'three';
 import { BufferGeometryUtils } from '../../libs/three125/BufferGeometryUtils.js';
 import { ARButton } from '../../libs/ARButton.js';
 
@@ -79,7 +79,7 @@ class App{
     }
 
     initReticle() {
-        let ring = new THREE.RingBufferGeometry(0.045, 0.05, 32).rotateX(- Math.PI / 2);
+        let ring = new THREE.RingGeometry(0.045, 0.05, 32).rotateX(- Math.PI / 2);
         let dot = new THREE.CircleBufferGeometry(0.005, 32).rotateX(- Math.PI / 2);
         const reticle = new THREE.Mesh(
             BufferGeometryUtils.mergeBufferGeometries([ring, dot]),

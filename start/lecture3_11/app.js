@@ -1,7 +1,7 @@
-import * as THREE from '../../libs/three125/three.module.js';
+import * as THREE from 'three';
 import { OrbitControls } from '../../libs/three125OrbitControls.js';
-import { GLTFLoader } from '../../libs/three125/GLTFLoader.js';
-import { Stats } from '../../libs/stats.module.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import Stats from 'three/addons/libs/stats.module.js';
 import { CanvasUI } from '../../libs/three125/CanvasUI.js'
 import { ARButton } from '../../libs/ARButton.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
@@ -23,7 +23,7 @@ class App{
        
 		this.scene.add( new THREE.HemisphereLight( 0x606060, 0x404040 ) );
 
-        const light = new THREE.DirectionalLight( 0xffffff );
+        const light = new THREE.DirectionalLight( 0xffffff, 3 );
         light.position.set( 1, 1, 1 ).normalize();
 		this.scene.add( light );
 			

@@ -12,7 +12,7 @@ import {
 	SphereGeometry,
 } from "./three";
 
-import { GLTFLoader } from './three/jsm/GLTFLoader.js';
+import { GLTFLoader } from 'three/addons/webxr/GLTFLoader.js';
 
 import {
 	Constants as MotionControllerConstants,

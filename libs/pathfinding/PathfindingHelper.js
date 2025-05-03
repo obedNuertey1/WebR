@@ -1,5 +1,5 @@
 import {
-  BoxBufferGeometry,
+  BoxGeometry,
   BufferAttribute,
   BufferGeometry,
   Color,
@@ -36,19 +36,19 @@ class PathfindingHelper extends Object3D {
     );
 
     this._targetMarker = new Mesh(
-      new BoxBufferGeometry( 0.3, 0.3, 0.3 ),
+      new BoxGeometry( 0.3, 0.3, 0.3 ),
       new MeshBasicMaterial( { color: colors.TARGET } )
     );
 
 
     this._nodeMarker = new Mesh(
-      new BoxBufferGeometry( 0.1, 0.8, 0.1 ),
+      new BoxGeometry( 0.1, 0.8, 0.1 ),
       new MeshBasicMaterial( { color: colors.CLOSEST_NODE } )
     );
 
 
     this._stepMarker = new Mesh(
-      new BoxBufferGeometry( 0.1, 1, 0.1 ),
+      new BoxGeometry( 0.1, 1, 0.1 ),
       new MeshBasicMaterial( { color: colors.CLAMPED_STEP } )
     );
 

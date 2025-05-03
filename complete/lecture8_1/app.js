@@ -1,8 +1,8 @@
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/GLTFLoader.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { RGBELoader } from 'three/addons/RGBELoader.js';
-import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
-import { Stats } from '../../libs/stats.module.js';
+import { XRControllerModelFactory } from 'three/addons/webxr/XRControllerModelFactory.js';
+import Stats from 'three/addons/libs/stats.module.js';
 import { VRButton } from '../../libs/VRButton.js';
 import { TeleportMesh } from '../../libs/TeleportMesh.js';
 import { Player } from '../../libs/Player.js';
@@ -70,20 +70,14 @@ class App{
     }
     
     setEnvironment(){
-        const loader = new RGBELoader().setDataType( THREE.UnsignedByteType );
-        const pmremGenerator = new THREE.PMREMGenerator( this.renderer );
-        pmremGenerator.compileEquirectangularShader();
-        
-        const self = this;
-        
-        loader.load( '../../assets/hdr/venice_sunset_1k.hdr', ( texture ) => {
-          const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
-          pmremGenerator.dispose();
-
-          self.scene.environment = envMap;
-
-        }, undefined, (err)=>{
-            console.error( 'An error occurred setting the environment');
+        const loader = new RGBELoader().setPath( '../../assets/' )
+        loader.load( 'hdr/venice_sunset_1k.hdr', ( texture ) => {
+    
+            texture.mapping = THREE.EquirectangularReflectionMapping;
+            const envMap = texture;
+            
+            this.scene.environment = envMap;
+    
         } );
     }
     

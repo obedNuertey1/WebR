@@ -14508,7 +14508,7 @@
 			depthSegments: depthSegments
 		};
 
-		this.fromBufferGeometry( new BoxBufferGeometry( width, height, depth, widthSegments, heightSegments, depthSegments ) );
+		this.fromBufferGeometry( new BoxGeometry( width, height, depth, widthSegments, heightSegments, depthSegments ) );
 		this.mergeVertices();
 
 	}
@@ -14516,13 +14516,13 @@
 	BoxGeometry.prototype = Object.create( Geometry.prototype );
 	BoxGeometry.prototype.constructor = BoxGeometry;
 
-	// BoxBufferGeometry
+	// BoxGeometry
 
-	function BoxBufferGeometry( width, height, depth, widthSegments, heightSegments, depthSegments ) {
+	function BoxGeometry( width, height, depth, widthSegments, heightSegments, depthSegments ) {
 
 		BufferGeometry.call( this );
 
-		this.type = 'BoxBufferGeometry';
+		this.type = 'BoxGeometry';
 
 		this.parameters = {
 			width: width,
@@ -14675,8 +14675,8 @@
 
 	}
 
-	BoxBufferGeometry.prototype = Object.create( BufferGeometry.prototype );
-	BoxBufferGeometry.prototype.constructor = BoxBufferGeometry;
+	BoxGeometry.prototype = Object.create( BufferGeometry.prototype );
+	BoxGeometry.prototype.constructor = BoxGeometry;
 
 	/**
 	 * @author mrdoob / http://mrdoob.com/
@@ -14698,7 +14698,7 @@
 			heightSegments: heightSegments
 		};
 
-		this.fromBufferGeometry( new PlaneBufferGeometry( width, height, widthSegments, heightSegments ) );
+		this.fromBufferGeometry( new PlaneGeometry( width, height, widthSegments, heightSegments ) );
 		this.mergeVertices();
 
 	}
@@ -14706,13 +14706,13 @@
 	PlaneGeometry.prototype = Object.create( Geometry.prototype );
 	PlaneGeometry.prototype.constructor = PlaneGeometry;
 
-	// PlaneBufferGeometry
+	// PlaneGeometry
 
-	function PlaneBufferGeometry( width, height, widthSegments, heightSegments ) {
+	function PlaneGeometry( width, height, widthSegments, heightSegments ) {
 
 		BufferGeometry.call( this );
 
-		this.type = 'PlaneBufferGeometry';
+		this.type = 'PlaneGeometry';
 
 		this.parameters = {
 			width: width,
@@ -14792,8 +14792,8 @@
 
 	}
 
-	PlaneBufferGeometry.prototype = Object.create( BufferGeometry.prototype );
-	PlaneBufferGeometry.prototype.constructor = PlaneBufferGeometry;
+	PlaneGeometry.prototype = Object.create( BufferGeometry.prototype );
+	PlaneGeometry.prototype.constructor = PlaneGeometry;
 
 	/**
 	 * @author mrdoob / http://mrdoob.com/
@@ -16231,7 +16231,7 @@
 					boxCamera = new PerspectiveCamera();
 
 					boxMesh = new Mesh(
-						new BoxBufferGeometry( 5, 5, 5 ),
+						new BoxGeometry( 5, 5, 5 ),
 						new ShaderMaterial( {
 							uniforms: ShaderLib.cube.uniforms,
 							vertexShader: ShaderLib.cube.vertexShader,
@@ -16264,7 +16264,7 @@
 					planeCamera = new OrthographicCamera( - 1, 1, 1, - 1, 0, 1 );
 
 					planeMesh = new Mesh(
-						new PlaneBufferGeometry( 2, 2 ),
+						new PlaneGeometry( 2, 2 ),
 						new MeshBasicMaterial( { depthTest: false, depthWrite: false, fog: false } )
 					);
 
@@ -25357,7 +25357,7 @@
 			detail: detail
 		};
 
-		this.fromBufferGeometry( new IcosahedronBufferGeometry( radius, detail ) );
+		this.fromBufferGeometry( new IcosahedronGeometry( radius, detail ) );
 		this.mergeVertices();
 
 	}
@@ -25365,9 +25365,9 @@
 	IcosahedronGeometry.prototype = Object.create( Geometry.prototype );
 	IcosahedronGeometry.prototype.constructor = IcosahedronGeometry;
 
-	// IcosahedronBufferGeometry
+	// IcosahedronGeometry
 
-	function IcosahedronBufferGeometry( radius, detail ) {
+	function IcosahedronGeometry( radius, detail ) {
 
 		var t = ( 1 + Math.sqrt( 5 ) ) / 2;
 
@@ -25386,7 +25386,7 @@
 
 		PolyhedronBufferGeometry.call( this, vertices, indices, radius, detail );
 
-		this.type = 'IcosahedronBufferGeometry';
+		this.type = 'IcosahedronGeometry';
 
 		this.parameters = {
 			radius: radius,
@@ -25395,8 +25395,8 @@
 
 	}
 
-	IcosahedronBufferGeometry.prototype = Object.create( PolyhedronBufferGeometry.prototype );
-	IcosahedronBufferGeometry.prototype.constructor = IcosahedronBufferGeometry;
+	IcosahedronGeometry.prototype = Object.create( PolyhedronBufferGeometry.prototype );
+	IcosahedronGeometry.prototype.constructor = IcosahedronGeometry;
 
 	/**
 	 * @author Abe Pazos / https://hamoid.com
@@ -27758,7 +27758,7 @@
 			thetaLength: thetaLength
 		};
 
-		this.fromBufferGeometry( new RingBufferGeometry( innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength ) );
+		this.fromBufferGeometry( new RingGeometry( innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength ) );
 		this.mergeVertices();
 
 	}
@@ -27766,13 +27766,13 @@
 	RingGeometry.prototype = Object.create( Geometry.prototype );
 	RingGeometry.prototype.constructor = RingGeometry;
 
-	// RingBufferGeometry
+	// RingGeometry
 
-	function RingBufferGeometry( innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength ) {
+	function RingGeometry( innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength ) {
 
 		BufferGeometry.call( this );
 
-		this.type = 'RingBufferGeometry';
+		this.type = 'RingGeometry';
 
 		this.parameters = {
 			innerRadius: innerRadius,
@@ -27877,8 +27877,8 @@
 
 	}
 
-	RingBufferGeometry.prototype = Object.create( BufferGeometry.prototype );
-	RingBufferGeometry.prototype.constructor = RingBufferGeometry;
+	RingGeometry.prototype = Object.create( BufferGeometry.prototype );
+	RingGeometry.prototype.constructor = RingGeometry;
 
 	/**
 	 * @author astrodud / http://astrodud.isgreat.org/
@@ -28815,7 +28815,7 @@
 		OctahedronGeometry: OctahedronGeometry,
 		OctahedronBufferGeometry: OctahedronBufferGeometry,
 		IcosahedronGeometry: IcosahedronGeometry,
-		IcosahedronBufferGeometry: IcosahedronBufferGeometry,
+		IcosahedronGeometry: IcosahedronGeometry,
 		DodecahedronGeometry: DodecahedronGeometry,
 		DodecahedronBufferGeometry: DodecahedronBufferGeometry,
 		PolyhedronGeometry: PolyhedronGeometry,
@@ -28831,9 +28831,9 @@
 		SphereGeometry: SphereGeometry,
 		SphereGeometry: SphereGeometry,
 		RingGeometry: RingGeometry,
-		RingBufferGeometry: RingBufferGeometry,
+		RingGeometry: RingGeometry,
 		PlaneGeometry: PlaneGeometry,
-		PlaneBufferGeometry: PlaneBufferGeometry,
+		PlaneGeometry: PlaneGeometry,
 		LatheGeometry: LatheGeometry,
 		LatheBufferGeometry: LatheBufferGeometry,
 		ShapeGeometry: ShapeGeometry,
@@ -28848,7 +28848,7 @@
 		CircleGeometry: CircleGeometry,
 		CircleBufferGeometry: CircleBufferGeometry,
 		BoxGeometry: BoxGeometry,
-		BoxBufferGeometry: BoxBufferGeometry
+		BoxGeometry: BoxGeometry
 	});
 
 	/**
@@ -33843,7 +33843,7 @@
 					switch ( data.type ) {
 
 						case 'PlaneGeometry':
-						case 'PlaneBufferGeometry':
+						case 'PlaneGeometry':
 
 							geometry = new Geometries[ data.type ](
 								data.width,
@@ -33855,7 +33855,7 @@
 							break;
 
 						case 'BoxGeometry':
-						case 'BoxBufferGeometry':
+						case 'BoxGeometry':
 						case 'CubeGeometry': // backwards compatible
 
 							geometry = new Geometries[ data.type ](
@@ -33940,7 +33940,7 @@
 							break;
 
 						case 'RingGeometry':
-						case 'RingBufferGeometry':
+						case 'RingGeometry':
 
 							geometry = new Geometries[ data.type ](
 								data.innerRadius,
@@ -44035,7 +44035,7 @@
 	exports.OctahedronGeometry = OctahedronGeometry;
 	exports.OctahedronBufferGeometry = OctahedronBufferGeometry;
 	exports.IcosahedronGeometry = IcosahedronGeometry;
-	exports.IcosahedronBufferGeometry = IcosahedronBufferGeometry;
+	exports.IcosahedronGeometry = IcosahedronGeometry;
 	exports.DodecahedronGeometry = DodecahedronGeometry;
 	exports.DodecahedronBufferGeometry = DodecahedronBufferGeometry;
 	exports.PolyhedronGeometry = PolyhedronGeometry;
@@ -44051,9 +44051,9 @@
 	exports.SphereGeometry = SphereGeometry;
 	exports.SphereGeometry = SphereGeometry;
 	exports.RingGeometry = RingGeometry;
-	exports.RingBufferGeometry = RingBufferGeometry;
+	exports.RingGeometry = RingGeometry;
 	exports.PlaneGeometry = PlaneGeometry;
-	exports.PlaneBufferGeometry = PlaneBufferGeometry;
+	exports.PlaneGeometry = PlaneGeometry;
 	exports.LatheGeometry = LatheGeometry;
 	exports.LatheBufferGeometry = LatheBufferGeometry;
 	exports.ShapeGeometry = ShapeGeometry;
@@ -44068,7 +44068,7 @@
 	exports.CircleGeometry = CircleGeometry;
 	exports.CircleBufferGeometry = CircleBufferGeometry;
 	exports.BoxGeometry = BoxGeometry;
-	exports.BoxBufferGeometry = BoxBufferGeometry;
+	exports.BoxGeometry = BoxGeometry;
 	exports.ShadowMaterial = ShadowMaterial;
 	exports.SpriteMaterial = SpriteMaterial;
 	exports.RawShaderMaterial = RawShaderMaterial;

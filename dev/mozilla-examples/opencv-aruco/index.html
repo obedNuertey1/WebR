@@ -207,7 +207,7 @@
 				initializeScene(){
 					// Add a box at the scene origin
 					let box = new THREE.Mesh(
-						new THREE.BoxBufferGeometry(0.1, 0.1, 0.1),
+						new THREE.BoxGeometry(0.1, 0.1, 0.1),
 						new THREE.MeshPhongMaterial({ color: '#DDFFDD' })
 					)
 					box.position.set(0, 0, 0)
@@ -218,7 +218,7 @@
 					// // Add a box at the scene origin
 					// this.markerbox = new THREE.Object3D();
 					// this.markerboxGeom = new THREE.Mesh(
-					// 	new THREE.BoxBufferGeometry(0.053, 0.053, 0.053),
+					// 	new THREE.BoxGeometry(0.053, 0.053, 0.053),
 					// 	new THREE.MeshPhongMaterial({ color: '#2D5FFD' })
 					// )
 					// this.markerboxGeom.position.set(0, 0, 0.053/2);
@@ -271,7 +271,7 @@
 									// Add a box 
 									var markerbox = new THREE.Object3D();
 									var markerboxGeom = new THREE.Mesh(
-										new THREE.BoxBufferGeometry(0.053, 0.053, 0.053),
+										new THREE.BoxGeometry(0.053, 0.053, 0.053),
 										new THREE.MeshPhongMaterial({ color: Math.random() * 0xffffff}) //'#2D5FFD' })
 									)
 									markerboxGeom.position.set(0, 0, 0.053/2);

@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 import { VRButton } from './VRButton.js';
-import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
-import { BoxLineGeometry } from 'three/addons/BoxLineGeometry.js';
-import { Stats } from '../../libs/stats.module.js';
+import { XRControllerModelFactory } from 'three/addons/webxr/XRControllerModelFactory.js';
+import { BoxLineGeometry } from 'three/addons/geometries/BoxLineGeometry.js';
+import Stats from 'three/addons/libs/stats.module.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 
@@ -21,7 +21,7 @@ class App{
 
 		this.scene.add( new THREE.HemisphereLight( 0x606060, 0x404040 ) );
 
-        const light = new THREE.DirectionalLight( 0xffffff );
+        const light = new THREE.DirectionalLight( 0xffffff, 3 );
         light.position.set( 1, 1, 1 ).normalize();
 		this.scene.add( light );
 			
@@ -60,7 +60,7 @@ class App{
         this.room.geometry.translate( 0, 3, 0 );
         this.scene.add( this.room );
         
-        const geometry = new THREE.IcosahedronBufferGeometry( this.radius, 2 );
+        const geometry = new THREE.IcosahedronGeometry( this.radius, 2 );
 
         for ( let i = 0; i < 200; i ++ ) {
 

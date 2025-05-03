@@ -60,7 +60,7 @@ class App{
         const opacity = 1;
 		
         const material = new THREE.MeshBasicMaterial({ transparent: true, opacity });
-        const geometry = new THREE.PlaneBufferGeometry();
+        const geometry = new THREE.PlaneGeometry();
 		const icon = new THREE.Mesh(geometry, material);
         const scale = 0.02;
         icon.scale.set( scale, scale, scale )

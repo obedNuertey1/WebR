@@ -26,7 +26,7 @@
         // Import three
         import * as THREE from 'three';
         // Import the default VRButton
-        import { VRButton } from 'three/addons/VRButton.js';
+        import { VRButton } from 'three/addons/webxr/VRButton.js';
 
         // Make a new scene
         let scene = new THREE.Scene();
@@ -46,7 +46,7 @@
 
         // Make a red cube
         let cube = new THREE.Mesh(
-            new THREE.BoxBufferGeometry(1,1,1),
+            new THREE.BoxGeometry(1,1,1),
             new THREE.MeshLambertMaterial({color:'red'})
         );
         cube.position.set(0, 1.5, -10);

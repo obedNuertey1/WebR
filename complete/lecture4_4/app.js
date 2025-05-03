@@ -1,10 +1,10 @@
-import * as THREE from '../../libs/three124/three.module.js';
-import { GLTFLoader } from '../../libs/three124/jsm/GLTFLoader.js';
-import { DRACOLoader } from '../../libs/three124/jsm/DRACOLoader.js';
-import { RGBELoader } from '../../libs/three124/jsm/RGBELoader.js';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
-import { Stats } from '../../libs/stats.module.js';
-import { OrbitControls } from '../../libs/three124/jsm/OrbitControls.js';
+import Stats from 'three/addons/libs/stats.module.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 
 class App{
@@ -23,14 +23,14 @@ class App{
 
 		this.scene.add( new THREE.HemisphereLight( 0x606060, 0x404040 ) );
 
-        const light = new THREE.DirectionalLight( 0xffffff );
+        const light = new THREE.DirectionalLight( 0xffffff, 3 );
         light.position.set( 1, 1, 1 ).normalize();
 		this.scene.add( light );
 			
 		this.renderer = new THREE.WebGLRenderer({ antialias: true } );
 		this.renderer.setPixelRatio( window.devicePixelRatio );
 		this.renderer.setSize( window.innerWidth, window.innerHeight );
-        this.renderer.outputEncoding = THREE.sRGBEncoding;
+        this.renderer.outputColorSpace = THREE.SRGBColorSpace;
         this.setEnvironment();
         
 		container.appendChild( this.renderer.domElement );
@@ -49,20 +49,14 @@ class App{
 	}	
     
     setEnvironment(){
-        const loader = new RGBELoader().setDataType( THREE.UnsignedByteType );
-        const pmremGenerator = new THREE.PMREMGenerator( this.renderer );
-        pmremGenerator.compileEquirectangularShader();
-        
-        const self = this;
-        
-        loader.load( '../../assets/hdr/venice_sunset_1k.hdr', ( texture ) => {
-          const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
-          pmremGenerator.dispose();
-
-          self.scene.environment = envMap;
-
-        }, undefined, (err)=>{
-            console.error( 'An error occurred setting the environment');
+        const loader = new RGBELoader().setPath( '../../assets/' )
+        loader.load( 'hdr/venice_sunset_1k.hdr', ( texture ) => {
+    
+            texture.mapping = THREE.EquirectangularReflectionMapping;
+            const envMap = texture;
+            
+            this.scene.environment = envMap;
+    
         } );
     }
     

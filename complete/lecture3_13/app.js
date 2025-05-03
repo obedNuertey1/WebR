@@ -1,8 +1,8 @@
-import * as THREE from '../../libs/three125/three.module.js';
+import * as THREE from 'three';
 import { VRButton } from '../../libs/VRButton.js';
-import { XRControllerModelFactory } from '../../libs/three125/XRControllerModelFactory.js';
-import { XRHandModelFactory } from '../../libs/three125/XRHandModelFactory.js';
-import { OrbitControls } from '../../libs/three125/OrbitControls.js';
+import { XRControllerModelFactory } from 'three/addons/webxr/XRControllerModelFactory.js';
+import { XRHandModelFactory } from 'three/addons/webxr/XRHandModelFactory.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 class App{
 	constructor(){
@@ -46,7 +46,7 @@ class App{
 
 		this.scene.add( new THREE.HemisphereLight( 0x808080, 0x606060 ) );
 
-		const light = new THREE.DirectionalLight( 0xffffff );
+		const light = new THREE.DirectionalLight( 0xffffff, 3 );
 		light.position.set( 0, 6, 0 );
 		light.castShadow = true;
 		light.shadow.camera.top = 2;

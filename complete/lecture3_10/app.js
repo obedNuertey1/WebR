@@ -1,13 +1,13 @@
-import * as THREE from '../../libs/three125/three.module.js';
-import { OrbitControls } from '../../libs/three125/OrbitControls.js';
-import { GLTFLoader } from '../../libs/three125/GLTFLoader.js';
-import { Stats } from '../../libs/stats.module.js';
-import { CanvasUI } from '../../libs/three125/CanvasUI.js'
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import Stats from 'three/addons/libs/stats.module.js';
+import { CanvasUI } from '../../libs/CanvasUI.js'
 import { ARButton } from '../../libs/ARButton.js';
 import {
 	Constants as MotionControllerConstants,
 	fetchProfile
-} from '../../libs/three125/motion-controllers.module.js';
+} from 'three/addons/libs/motion-controllers.module.js';
 
 const DEFAULT_PROFILES_PATH = 'https://cdn.jsdelivr.net/npm/@webxr-input-profiles/assets@1.0/dist/profiles';
 const DEFAULT_PROFILE = 'generic-trigger';
@@ -27,7 +27,7 @@ class App{
        
 		this.scene.add( new THREE.HemisphereLight( 0x606060, 0x404040 ) );
 
-        const light = new THREE.DirectionalLight( 0xffffff );
+        const light = new THREE.DirectionalLight( 0xffffff, 3 );
         light.position.set( 1, 1, 1 ).normalize();
 		this.scene.add( light );
 			

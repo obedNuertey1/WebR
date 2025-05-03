@@ -1,5 +1,5 @@
-import * as THREE from '../../libs/three125/three.module.js';
-import { GLTFLoader } from '../../libs/three125/GLTFLoader.js';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from '../../libs/three125/DRACOLoader.js';
 import { RGBELoader } from '../../libs/three125/RGBELoader.js';
 import { ARButton } from '../../libs/ARButton.js';
@@ -46,20 +46,14 @@ class App{
 	}
     
     setEnvironment(){
-        const loader = new RGBELoader().setDataType( THREE.UnsignedByteType );
-        const pmremGenerator = new THREE.PMREMGenerator( this.renderer );
-        pmremGenerator.compileEquirectangularShader();
-        
-        const self = this;
-        
-        loader.load( '../../assets/hdr/venice_sunset_1k.hdr', ( texture ) => {
-          const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
-          pmremGenerator.dispose();
-
-          self.scene.environment = envMap;
-
-        }, undefined, (err)=>{
-            console.error( 'An error occurred setting the environment');
+        const loader = new RGBELoader().setPath( '../../assets/' )
+        loader.load( 'hdr/venice_sunset_1k.hdr', ( texture ) => {
+    
+            texture.mapping = THREE.EquirectangularReflectionMapping;
+            const envMap = texture;
+            
+            this.scene.environment = envMap;
+    
         } );
     }
 	

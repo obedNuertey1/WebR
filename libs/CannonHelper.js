@@ -1,4 +1,4 @@
-import * as THREE from './three';
+import * as THREE from 'three';
 
 class CannonHelper{
     constructor(scene, world){
@@ -14,7 +14,7 @@ class CannonHelper{
         const ambient = new THREE.AmbientLight( 0x888888 );
         this.scene.add( ambient );
 
-        const light = new THREE.DirectionalLight( 0xdddddd );
+        const light = new THREE.DirectionalLight( 0xdddddd, 3 );
         light.position.set( 3, 10, 4 );
         light.target.position.set( 0, 0, 0 );
 

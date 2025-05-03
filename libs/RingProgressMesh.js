@@ -1,4 +1,4 @@
-import { Mesh, PlaneBufferGeometry, ShaderMaterial } from './three';
+import { Mesh, PlaneGeometry, ShaderMaterial } from 'three';
 
 const vshader = `
 varying vec2 vUv;
@@ -67,7 +67,7 @@ class RingProgressMesh extends Mesh{
         } );
         
         this.geometry.dispose();
-        this.geometry = new PlaneBufferGeometry();
+        this.geometry = new PlaneGeometry();
         this.scale.set( scale, scale, scale );
         this.progress = 1;
     }

@@ -1,4 +1,4 @@
-import * as THREE from './three';
+import * as THREE from 'three';
 
 class ControllerGestures extends THREE.EventDispatcher{
     constructor( renderer ){

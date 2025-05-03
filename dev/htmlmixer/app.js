@@ -1,6 +1,6 @@
 import * as THREE from 'three';
-import { BoxLineGeometry } from 'three/addons/BoxLineGeometry.js';
-import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
+import { BoxLineGeometry } from 'three/addons/geometries/BoxLineGeometry.js';
+import { XRControllerModelFactory } from 'three/addons/webxr/XRControllerModelFactory.js';
 import { VRButton } from '../../libs/VRButton.js';
 import {  THREEx } from './threex.htmlmixer.js';
 

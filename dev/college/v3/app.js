@@ -1,10 +1,10 @@
 
 import * as THREE from '../three';
-import { GLTFLoader } from '../three/addons/GLTFLoader.js';
+import { GLTFLoader } from '../three/addons/loaders/GLTFLoader.js';
 import { LoadingBar } from '../../../libs/LoadingBar.js';
-import { VRButton } from '../three/addons/VRButton.js';
-import { XRControllerModelFactory } from '../three/addons/XRControllerModelFactory.js';
-import { Stats } from '../../../libs/stats.module.js';
+import { VRButton } from '../three/addons/webxr/VRButton.js';
+import { XRControllerModelFactory } from '../three/addons/webxr/XRControllerModelFactory.js';
+import Stats from '../three/addons/libs/stats.module.js';
 
 class App{
 	constructor(){

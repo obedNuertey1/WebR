@@ -8,8 +8,8 @@ import { Mesh,
         WebGLRenderer, 
         Vector3, 
         Quaternion,
-        IcosahedronBufferGeometry 
-       } from './three';
+        IcosahedronGeometry 
+       } from 'three';
 import { CanvasKeyboard } from './CanvasKeyboard.js';
 
 /*An element is defined by 
@@ -211,7 +211,7 @@ class CanvasUI{
           
         if ( this.scene ){
             const radius = 0.015;
-            const geometry = new IcosahedronBufferGeometry( radius );
+            const geometry = new IcosahedronGeometry( radius );
             const material = new MeshBasicMaterial( { color: 0x0000aa } );
 
             const mesh1 = new Mesh( geometry, material );

@@ -1,6 +1,6 @@
-import * as THREE from '../../libs/three125/three.module.js';
-import { OrbitControls } from '../../libs/three125/OrbitControls.js';
-import { Stats } from '../../libs/stats.module.js';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import Stats from 'three/addons/libs/stats.module.js';
 import { ARButton } from '../../libs/ARButton.js';
 
 class App{
@@ -16,7 +16,7 @@ class App{
        
 		this.scene.add( new THREE.HemisphereLight( 0x606060, 0x404040 ) );
 
-        const light = new THREE.DirectionalLight( 0xffffff );
+        const light = new THREE.DirectionalLight( 0xffffff, 3 );
         light.position.set( 1, 1, 1 ).normalize();
 		this.scene.add( light );
 			
@@ -40,7 +40,7 @@ class App{
 	}	
     
     initScene(){
-        this.geometry = new THREE.BoxBufferGeometry( 0.06, 0.06, 0.06 ); 
+        this.geometry = new THREE.BoxGeometry( 0.06, 0.06, 0.06 ); 
         this.meshes = [];
     }
     

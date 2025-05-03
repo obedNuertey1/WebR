@@ -1,11 +1,11 @@
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/GLTFLoader.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { FBXLoader } from 'three/addons/FBXLoader.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
 import { ARButton } from 'three/addons/ARButton.js';
-import { VRButton } from 'three/addons/VRButton.js';
-import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
-import { Stats } from '../../libs/stats.module.js';
+import { VRButton } from 'three/addons/webxr/VRButton.js';
+import { XRControllerModelFactory } from 'three/addons/webxr/XRControllerModelFactory.js';
+import Stats from 'three/addons/libs/stats.module.js';
 import * as GUI from '../../libs/dat.gui.module.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
@@ -26,7 +26,7 @@ class App{
 
 		this.scene.add( new THREE.HemisphereLight( 0x606060, 0x404040 ) );
 
-        const light = new THREE.DirectionalLight( 0xffffff );
+        const light = new THREE.DirectionalLight( 0xffffff, 3 );
         light.position.set( 1, 1, 1 ).normalize();
 		this.scene.add( light );
 			
@@ -48,6 +48,18 @@ class App{
         
         window.addEventListener('resize', this.resize.bind(this) );
 	}	
+
+    setEnvironment(){
+        const loader = new RGBELoader().setPath( '../../assets/' )
+        loader.load( 'hdr/venice_sunset_1k.hdr', ( texture ) => {
+    
+            texture.mapping = THREE.EquirectangularReflectionMapping;
+            const envMap = texture;
+            
+            this.scene.environment = envMap;
+    
+        } );
+    }
     
     initScene(){
         

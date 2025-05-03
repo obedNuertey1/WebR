@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { BoxLineGeometry } from 'three/addons/BoxLineGeometry.js';
+import { BoxLineGeometry } from 'three/addons/geometries/BoxLineGeometry.js';
 import { CanvasUI } from '../../libs/CanvasUI.js'
 import { VRButton } from '../../libs/VRButton.js';
 
@@ -17,7 +17,7 @@ class App{
 
 		this.scene.add( new THREE.HemisphereLight( 0x606060, 0x404040 ) );
 
-        const light = new THREE.DirectionalLight( 0xffffff );
+        const light = new THREE.DirectionalLight( 0xffffff, 3 );
         light.position.set( 1, 1, 1 ).normalize();
 		this.scene.add( light );
 			

@@ -26,8 +26,8 @@
 
 			import * as THREE from 'three';
 			import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-			import { VRButton } from 'three/addons/VRButton.js';
-			import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
+			import { VRButton } from 'three/addons/webxr/VRButton.js';
+			import { XRControllerModelFactory } from 'three/addons/webxr/XRControllerModelFactory.js';
 
 			var container;
 			var camera, scene, renderer;
@@ -57,7 +57,7 @@
 				controls.target.set( 0, 1.6, 0 );
 				controls.update();
 
-				var geometry = new THREE.PlaneBufferGeometry( 4, 4 );
+				var geometry = new THREE.PlaneGeometry( 4, 4 );
 				var material = new THREE.MeshStandardMaterial( {
 					color: 0xeeeeee,
 					roughness: 1.0,
@@ -70,7 +70,7 @@
 
 				scene.add( new THREE.HemisphereLight( 0x808080, 0x606060 ) );
 
-				var light = new THREE.DirectionalLight( 0xffffff );
+				var light = new THREE.DirectionalLight( 0xffffff, 3 );
 				light.position.set( 0, 6, 0 );
 				light.castShadow = true;
 				light.shadow.camera.top = 2;
@@ -84,10 +84,10 @@
 				scene.add( group );
 
 				var geometries = [
-					new THREE.BoxBufferGeometry( 0.2, 0.2, 0.2 ),
+					new THREE.BoxGeometry( 0.2, 0.2, 0.2 ),
 					new THREE.ConeBufferGeometry( 0.2, 0.2, 64 ),
 					new THREE.CylinderBufferGeometry( 0.2, 0.2, 0.2, 64 ),
-					new THREE.IcosahedronBufferGeometry( 0.2, 3 ),
+					new THREE.IcosahedronGeometry( 0.2, 3 ),
 					new THREE.TorusBufferGeometry( 0.2, 0.04, 64, 32 )
 				];
 

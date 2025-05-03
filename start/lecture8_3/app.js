@@ -1,10 +1,10 @@
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/GLTFLoader.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/DRACOLoader.js';
 import { RGBELoader } from 'three/addons/RGBELoader.js';
-import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
+import { XRControllerModelFactory } from 'three/addons/webxr/XRControllerModelFactory.js';
 import { Pathfinding } from 'three/addons/three-pathfinding.module.js';
-import { Stats } from '../../libs/stats.module.js';
+import Stats from 'three/addons/libs/stats.module.js';
 import { VRButton } from '../../libs/VRButton.js';
 import { TeleportMesh } from '../../libs/TeleportMesh.js';
 import { Interactable } from '../../libs/Interactable.js';

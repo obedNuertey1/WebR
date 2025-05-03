@@ -151,7 +151,7 @@
 
 			const createBox = () => {
 				const group = new THREE.Group();
-				const geometry = new THREE.BoxBufferGeometry(0.1, 0.1, 0.1);
+				const geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
 				const color = new THREE.Color(0xffffff);
 				color.setHex(Math.random() * 0xffffff);
 				const material = new THREE.MeshPhongMaterial({color: color});

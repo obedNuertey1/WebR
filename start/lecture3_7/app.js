@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { VRButton } from '../../libs/VRButton.js';
-import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
-import { Stats } from '../../libs/stats.module.js';
+import { XRControllerModelFactory } from 'three/addons/webxr/XRControllerModelFactory.js';
+import Stats from 'three/addons/libs/stats.module.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 
@@ -20,7 +20,7 @@ class App{
 
 		this.scene.add( new THREE.HemisphereLight( 0xffffff, 0x404040 ) );
 
-        const light = new THREE.DirectionalLight( 0xffffff );
+        const light = new THREE.DirectionalLight( 0xffffff, 3 );
         light.position.set( 1, 1, 1 ).normalize();
 		this.scene.add( light );
 			
@@ -61,7 +61,7 @@ class App{
 		this.scene.fog = new THREE.Fog( 0xa0a0a0, 50, 100 );
 
 		// ground
-		const ground = new THREE.Mesh( new THREE.PlaneBufferGeometry( 200, 200 ), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );
+		const ground = new THREE.Mesh( new THREE.PlaneGeometry( 200, 200 ), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );
 		ground.rotation.x = - Math.PI / 2;
 		this.scene.add( ground );
 
@@ -156,7 +156,7 @@ class App{
 
             case 'gaze':
 
-                geometry = new THREE.RingBufferGeometry( 0.02, 0.04, 32 ).translate( 0, 0, - 1 );
+                geometry = new THREE.RingGeometry( 0.02, 0.04, 32 ).translate( 0, 0, - 1 );
                 material = new THREE.MeshBasicMaterial( { opacity: 0.5, transparent: true } );
                 return new THREE.Mesh( geometry, material );
 

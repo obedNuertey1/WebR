@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 import { VRButton } from '../../libs/VRButton.js';
-import { BoxLineGeometry } from 'three/addons/BoxLineGeometry.js';
-import { GLTFLoader } from 'three/addons/GLTFLoader.js';
-import { Stats } from '../../libs/stats.module.js';
+import { BoxLineGeometry } from 'three/addons/geometries/BoxLineGeometry.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import Stats from 'three/addons/libs/stats.module.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { SpotLightVolumetricMaterial } from '../../libs/SpotLightVolumetricMaterial.js';
 
@@ -22,7 +22,7 @@ class App{
 
 		this.scene.add( new THREE.HemisphereLight( 0x606060, 0x404040 ) );
 
-        const light = new THREE.DirectionalLight( 0xffffff );
+        const light = new THREE.DirectionalLight( 0xffffff, 3 );
         light.position.set( 1, 1, 1 ).normalize();
 		this.scene.add( light );
 			
@@ -65,7 +65,7 @@ class App{
         this.room.geometry.translate( 0, 3, 0 );
         this.scene.add( this.room );
         
-        const geometry = new THREE.IcosahedronBufferGeometry( this.radius, 2 );
+        const geometry = new THREE.IcosahedronGeometry( this.radius, 2 );
 
         for ( let i = 0; i < 200; i ++ ) {
 
@@ -145,7 +145,7 @@ class App{
                 
             case 'gaze':
 
-                geometry = new THREE.RingBufferGeometry( 0.02, 0.04, 32 ).translate( 0, 0, - 1 );
+                geometry = new THREE.RingGeometry( 0.02, 0.04, 32 ).translate( 0, 0, - 1 );
                 material = new THREE.MeshBasicMaterial( { opacity: 0.5, transparent: true } );
                 controller.add( new THREE.Mesh( geometry, material ) )
 

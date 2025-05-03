@@ -128,7 +128,7 @@ export default class XREngine {
 
 	addBox(position=[0,0,0], size=[0.1, 0.1, 0.1], color=0x00FF00){
 		const box = new THREE.Mesh(
-			new THREE.BoxBufferGeometry(...size),
+			new THREE.BoxGeometry(...size),
 			new THREE.MeshLambertMaterial({ color: color })
 		)
 		box.position.set(...position)

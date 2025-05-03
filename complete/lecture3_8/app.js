@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { VRButton } from '../../libs/VRButton.js';
-import { XRControllerModelFactory } from 'three/addons/XRControllerModelFactory.js';
-import { Stats } from '../../libs/stats.module.js';
+import { XRControllerModelFactory } from 'three/addons/webxr/XRControllerModelFactory.js';
+import Stats from 'three/addons/libs/stats.module.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { CannonHelper } from '../../libs/CannonHelper.js';
 
@@ -21,7 +21,7 @@ class App{
 
 		this.scene.add( new THREE.HemisphereLight( 0x555555, 0xFFFFFF ) );
 
-        const light = new THREE.DirectionalLight( 0xffffff );
+        const light = new THREE.DirectionalLight( 0xffffff, 6 );
         light.position.set( 1, 1.25, 1.25 ).normalize();
         light.castShadow = true;
         const size = 15;
@@ -205,7 +205,7 @@ class App{
 
             case 'gaze':
 
-                geometry = new THREE.RingBufferGeometry( 0.02, 0.04, 32 ).translate( 0, 0, - 1 );
+                geometry = new THREE.RingGeometry( 0.02, 0.04, 32 ).translate( 0, 0, - 1 );
                 material = new THREE.MeshBasicMaterial( { opacity: 0.5, transparent: true } );
                 return new THREE.Mesh( geometry, material );
 

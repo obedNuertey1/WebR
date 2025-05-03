@@ -1,4 +1,4 @@
-import { Clock, Mesh, Vector2, LatheBufferGeometry, Color, ShaderMaterial } from './three';
+import { Clock, Mesh, Vector2, LatheBufferGeometry, Color, ShaderMaterial } from 'three';
 
 class TeleportMesh extends Mesh{
     constructor(){
