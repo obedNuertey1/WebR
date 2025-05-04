@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { DRACOLoader } from 'three/addons/DRACOLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
 import Stats from 'three/addons/libs/stats.module.js';
@@ -49,20 +49,12 @@ class App{
 	}	
     
     setEnvironment(){
-        const loader = new RGBELoader().setDataType( THREE.UnsignedByteType );
-        const pmremGenerator = new THREE.PMREMGenerator( this.renderer );
-        pmremGenerator.compileEquirectangularShader();
+        const loader = new RGBELoader().setPath( '../../assets/' )
+        loader.load( 'hdr/venice_sunset_1k.hdr', ( texture ) => {
+    
+            texture.mapping = THREE.EquirectangularReflectionMapping;
+            this.scene.environment = texture;
         
-        const self = this;
-        
-        loader.load( '../../assets/hdr/venice_sunset_1k.hdr', ( texture ) => {
-          const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
-          pmremGenerator.dispose();
-
-          self.scene.environment = envMap;
-
-        }, undefined, (err)=>{
-            console.error( 'An error occurred setting the environment');
         } );
     }
     
@@ -84,9 +76,9 @@ class App{
     }
     
     loadGLTF(filename){
-        const loader = new GLTFLoader( );
+        const loader = new GLTFLoader( ).setPath( '../../assets/' );
         const dracoLoader = new DRACOLoader();
-        dracoLoader.setDecoderPath( '../../node_modules/three/jsm/libs/draco/' );
+        dracoLoader.setDecoderPath( '../../node_modules/three/examples/jsm/libs/draco/' );
         loader.setDRACOLoader( dracoLoader );
         
         const self = this;

@@ -1,12 +1,12 @@
 import * as THREE from 'three';
-import { OrbitControls } from '../../libs/three125OrbitControls.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import Stats from 'three/addons/libs/stats.module.js';
-import { CanvasUI } from '../../libs/three125/CanvasUI.js'
+import { CanvasUI } from '../../libs/CanvasUI.js'
 import { ARButton } from '../../libs/ARButton.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
-import { Player } from '../../libs/three125/Player.js';
-import { ControllerGestures } from '../../libs/three125/ControllerGestures.js';
+import { Player } from '../../libs/Player.js';
+import { ControllerGestures } from '../../libs/ControllerGestures.js';
 
 class App{
 	constructor(){
@@ -73,7 +73,7 @@ class App{
 				});
 				
 				const options = {
-					object: object,
+					object: gltf.scene,
 					speed: 0.5,
 					animations: gltf.animations,
 					clip: gltf.animations[0],
@@ -86,8 +86,8 @@ class App{
                 self.knight.object.visible = false;
 				
 				self.knight.action = 'Dance';
-				const scale = 0.003;
-				self.knight.object.scale.set(scale, scale, scale); 
+				//const scale = 0.003;
+				//self.knight.object.scale.set(scale, scale, scale); 
 				
                 self.loadingBar.visible = false;
 			},
@@ -100,7 +100,7 @@ class App{
 			// called when loading has errors
 			function ( error ) {
 
-				console.log( 'An error happened' );
+				console.log( 'An error happened' + error );
 
 			}
 		);

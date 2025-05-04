@@ -46,20 +46,12 @@ class App{
 	}
     
     setEnvironment(){
-        const loader = new RGBELoader().setDataType( THREE.UnsignedByteType );
-        const pmremGenerator = new THREE.PMREMGenerator( this.renderer );
-        pmremGenerator.compileEquirectangularShader();
+        const loader = new RGBELoader().setPath( '../../assets/' )
+        loader.load( 'hdr/venice_sunset_1k.hdr', ( texture ) => {
+    
+            texture.mapping = THREE.EquirectangularReflectionMapping;
+            this.scene.environment = texture;
         
-        const self = this;
-        
-        loader.load( '../../assets/hdr/venice_sunset_1k.hdr', ( texture ) => {
-          const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
-          pmremGenerator.dispose();
-
-          self.scene.environment = envMap;
-
-        }, undefined, (err)=>{
-            console.error( 'An error occurred setting the environment');
         } );
     }
 	
@@ -72,7 +64,7 @@ class App{
     loadCamera(){
 	    const loader = new GLTFLoader().setPath(this.assetsPath);
         const dracoLoader = new DRACOLoader();
-        dracoLoader.setDecoderPath( '../../node_modules/three/jsm/libs/draco/' );
+        dracoLoader.setDecoderPath( '../../node_modules/three/examples/jsm/libs/draco/' );
         loader.setDRACOLoader( dracoLoader );
 		const self = this;
 		
@@ -88,7 +80,7 @@ class App{
 				
                 //Step 1 - create a mixer and an action
                 const mixer = new THREE.AnimationMixer( self.model );
-                const action = new mixer.clipAction( gltf.animations[0] );
+                const action = mixer.clipAction( gltf.animations[0] );
                 action.loop = THREE.LoopOnce;
                 self.action = action;
                 
