@@ -2,7 +2,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/DRACOLoader.js';
-import { RGBELoader } from 'three/addons/RGBELoader.js';
+import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 import Stats from 'three/addons/libs/stats.module.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
 import { VRButton } from '../../libs/VRButton.js';
@@ -95,7 +95,7 @@ class App{
         
 		const loader = new GLTFLoader( ).setPath(this.assetsPath);
         const dracoLoader = new DRACOLoader();
-        dracoLoader.setDecoderPath( '../../libs/three/js/draco/' );
+        dracoLoader.setDecoderPath( '../../node_modules/three/jsm/libs/draco/' );
         loader.setDRACOLoader( dracoLoader );
         
         const self = this;

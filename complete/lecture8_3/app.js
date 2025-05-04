@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { DRACOLoader } from 'three/addons/DRACOLoader.js';
-import { RGBELoader } from 'three/addons/RGBELoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 import { XRControllerModelFactory } from 'three/addons/webxr/XRControllerModelFactory.js';
 import { Pathfinding } from '../../libs/pathfinding/Pathfinding.js';
 import Stats from 'three/addons/libs/stats.module.js';
@@ -292,7 +292,7 @@ class App{
         
 		const loader = new GLTFLoader().setPath(this.assetsPath);
         const dracoLoader = new DRACOLoader();
-        dracoLoader.setDecoderPath( '../../libs/three/js/draco/' );
+        dracoLoader.setDecoderPath( '../../node_modules/three/examples/jsm/libs/draco/' );
         loader.setDRACOLoader( dracoLoader );
         
 		const self = this;

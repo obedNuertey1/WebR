@@ -1,4 +1,4 @@
-import { Clock, Mesh, Vector2, LatheBufferGeometry, Color, ShaderMaterial } from 'three';
+import { Clock, Mesh, Vector2, LatheGeometry, Color, ShaderMaterial } from 'three';
 
 class TeleportMesh extends Mesh{
     constructor(){
@@ -48,7 +48,7 @@ class TeleportMesh extends Mesh{
         
         //points.forEach( pt => console.log( `${pt.x.toFixed(3)}, ${pt.y.toFixed(3)}`));
         
-        this.geometry = new LatheBufferGeometry( points, 16 );
+        this.geometry = new LatheGeometry( points, 16 );
         this.material = new ShaderMaterial( { 
             uniforms: {
                 uDisplayHeight: { value: 0 },
@@ -94,7 +94,7 @@ void main(){
         points.push( new Vector2( baseRadius, 0 ));
         points.push( new Vector2( baseRadius, height ));
         
-        const geometry = new LatheBufferGeometry( points );
+        const geometry = new LatheGeometry( points );
         const material = new ShaderMaterial({
             visible: false
         });

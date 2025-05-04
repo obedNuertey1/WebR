@@ -10,7 +10,7 @@ import {
   Object3D,
   SphereGeometry,
   Vector3,
-} from '../three';
+} from 'three';
 
 const colors = {
   PLAYER: new Color( 0xee836f ).convertGammaToLinear( 2.2 ).getHex(),

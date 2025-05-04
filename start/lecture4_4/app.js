@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/DRACOLoader.js';
-import { RGBELoader } from 'three/addons/RGBELoader.js';
+import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
 import Stats from 'three/addons/libs/stats.module.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -86,7 +86,7 @@ class App{
     loadGLTF(filename){
         const loader = new GLTFLoader( );
         const dracoLoader = new DRACOLoader();
-        dracoLoader.setDecoderPath( '../../libs/three/js/draco/' );
+        dracoLoader.setDecoderPath( '../../node_modules/three/jsm/libs/draco/' );
         loader.setDRACOLoader( dracoLoader );
         
         const self = this;

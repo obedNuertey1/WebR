@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { DRACOLoader } from '../../libs/three125/DRACOLoader.js';
-import { RGBELoader } from '../../libs/three125/RGBELoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 import { ARButton } from '../../libs/ARButton.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
 
@@ -72,7 +72,7 @@ class App{
     loadCamera(){
 	    const loader = new GLTFLoader().setPath(this.assetsPath);
         const dracoLoader = new DRACOLoader();
-        dracoLoader.setDecoderPath( '../../libs/three/js/draco/' );
+        dracoLoader.setDecoderPath( '../../node_modules/three/jsm/libs/draco/' );
         loader.setDRACOLoader( dracoLoader );
 		const self = this;
 		

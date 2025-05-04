@@ -101,9 +101,9 @@ class App{
     }
     
     loadGLTF(filename){
-        const loader = new GLTFLoader( );
+        const loader = new GLTFLoader( ).setPath( '../../assets/');
         const dracoLoader = new DRACOLoader();
-        dracoLoader.setDecoderPath( '../../libs/three/js/draco/' );
+        dracoLoader.setDecoderPath( '../../node_modules/three/examples/jsm/libs/draco/' );
         loader.setDRACOLoader( dracoLoader );
         
         const self = this;
@@ -117,12 +117,19 @@ class App{
                 self.animations = {};
                 
                 gltf.animations.forEach( (anim)=>{
+                    if (anim.name == 'Look Around'){
+                        anim.name = 'Idle';
+                    }else if (anim.name == 'Walking'){
+                        anim.name = 'Walk';
+                    }
                     self.animations[anim.name] = anim;
                 })
                 
                 self.addButtonEvents();
                 
-                self.knight = gltf.scene.children[0];
+                self.knight = gltf.scene;
+
+                gltf.scene.children[1].visible = false;
                 
                 self.mixer = new THREE.AnimationMixer( self.knight )
                 
@@ -130,8 +137,8 @@ class App{
                 
                 self.loadingBar.visible = false;
                 
-                const scale = 0.01;
-				self.knight.scale.set(scale, scale, scale); 
+                //const scale = 0.01;
+				//self.knight.scale.set(scale, scale, scale); 
                 self.action = "Idle";
                 
                 self.renderer.setAnimationLoop( self.render.bind(self) );

@@ -2,7 +2,7 @@ import {
 	Vector3,
 	Plane,
 	Triangle,
-} from '../three';
+} from 'three';
 
 import { Utils } from './Utils.js';
 import { AStar } from './AStar.js';

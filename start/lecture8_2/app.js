@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { RGBELoader } from 'three/addons/RGBELoader.js';
+import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 import { XRControllerModelFactory } from 'three/addons/webxr/XRControllerModelFactory.js';
 import Stats from 'three/addons/libs/stats.module.js';
 import { VRButton } from '../../libs/VRButton.js';
