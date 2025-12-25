@@ -1,5 +1,4 @@
-# Learn-WebXR
-Resources for my Udemy course
+#WebR
 
 ## Examples
 Online examples are available [here](https://niksgames.com/webxr/)
